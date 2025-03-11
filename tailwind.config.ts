@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const svgToDataUri = require("mini-svg-data-uri");
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
 const config = {
   darkMode: "class",

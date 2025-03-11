@@ -32,6 +32,7 @@ export const AnimatedTooltip = ({
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
   );
+
   const handleMouseMove = (event: any) => {
     const halfWidth = event.target.offsetWidth / 2;
     x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
@@ -40,9 +41,8 @@ export const AnimatedTooltip = ({
   return (
     <>
       {items.map((item, idx) => (
-        <div
+        <div key={item.id+idx+"-"+item.name}
           className="-mr-4  relative group"
-          key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
