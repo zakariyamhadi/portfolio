@@ -11,7 +11,7 @@ export function ModeToggle() {
 
   return (
     <Button
-      className="!ml-auto rounded-full !transition-all"
+      className="!ml-auto !mr-5 rounded-full !transition-all"
       size="icon"
       onClick={() => {
         if (theme == "dark") setTheme("light");

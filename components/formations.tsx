@@ -14,7 +14,7 @@ export function TimelineDemo() {
         <div>
           <div className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8 flex flex-col">
             <div className="flex items-center">
-              {"Ingénieur Développement chez "}
+              Ingénieur Développement chez{" "}
               <div className="flex items-center justify-center mx-2 p-2 rounded-xl bg-[#3b0764]">
                 <Image
                   alt="logo-antibia"
@@ -25,7 +25,8 @@ export function TimelineDemo() {
                   src="/assets/antibia.png"
                 />
               </div>
-              {"en tant qu'Ingénieur Développement."}            </div>
+              en tant qu'Ingénieur Développement.
+            </div>
             <div className="flex items-center">
               Alternance chez{" "}
               <Image
@@ -39,7 +40,10 @@ export function TimelineDemo() {
               en tant que Développeur Front-End Web & Mobile.
             </div>
             <p>
-              {"Une année riche en expériences où j'ai occupé le rôle de développeur principal sur les projets les plus récents. J'ai eu l'opportunité de déployer ces applications dans divers environnements, jusqu'à leur mise en production."}
+              Une année riche en expériences où j'ai occupé le rôle de
+              développeur principal sur les projets les plus récents. J'ai eu
+              l'opportunité de déployer ces applications dans divers
+              environnements, jusqu'à leur mise en production.
             </p>
             <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal my-8 flex items-center">
               Préparation du Mastère en Solutions Digitales et Data (MS2D) avec{" "}
@@ -98,7 +102,8 @@ export function TimelineDemo() {
                 Minio, Stripe etc...
               </p>
               <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal flex items-center">
-                • {"Intégration de ShadcnUI et de quelques composant d'AceternityUI"}
+                • Intégration de ShadcnUI et de quelques composant
+                d'AceternityUI
               </p>
               <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal flex items-center">
                 • Amélioration continue des process internes (qualité de code,
@@ -112,7 +117,8 @@ export function TimelineDemo() {
                 • Responsable Front au niveau des validations de Merge-Request
               </p>
               <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal flex items-center">
-                • {"Initiative de mis en commun de composant Front au sein de l'équipe de développement"}
+                • Initiative de mis en commun de composant Front au sein de
+                l'équipe de développement
               </p>
               <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal flex items-center">
                 • Développement de sites Shopify
