@@ -11,7 +11,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio - MHADi Zakariya",
+  title: "Portfolio - MHADi Sara",
   description: "Un magnifique portafolio fait avec ❤️ par MHADI Zakariya",
 };
 
