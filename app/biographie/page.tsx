@@ -139,7 +139,7 @@ export default function BiographiePage() {
   );
 }
 
-export function CVTitle() {
+function CVTitle() {
   const words = [
     {
       text: "Découvrez",
