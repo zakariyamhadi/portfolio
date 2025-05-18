@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const transition = {
   type: "spring",
@@ -18,17 +19,25 @@ export const MenuItem = ({
   active,
   item,
   children,
+  onClick,
+  selected = false,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
+  onClick?: () => void;
+  selected?: boolean;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
+    <div
+      onMouseEnter={() => setActive(item)}
+      className="relative "
+      onClick={onClick}
+    >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className={`cursor-pointer text-black hover:opacity-[0.9] dark:text-white transition-all px-5 py-4 rounded-full ${selected ? "font-bold text-white bg-primary-dark" : ""} `}
       >
         {item}
       </motion.p>
@@ -70,7 +79,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border-1 items-center border-secondary/40 dark:bg-slate-900 backdrop-blur-2xl dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-2 py-2 mx-2 "
+      className="relative rounded-full border-1 items-center border-secondary/40 dark:bg-slate-900 backdrop-blur-2xl dark:border-white/[0.2] bg-white shadow-lg flex justify-center space-x-0 px-2 !pr-8 py-2 mx-2 "
     >
       {children}
     </nav>

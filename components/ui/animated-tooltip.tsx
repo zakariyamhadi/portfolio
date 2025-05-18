@@ -25,12 +25,12 @@ export const AnimatedTooltip = ({
   // rotate the tooltip
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
-    springConfig
+    springConfig,
   );
   // translate the tooltip
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
-    springConfig
+    springConfig,
   );
   const handleMouseMove = (event: any) => {
     const halfWidth = event.target.offsetWidth / 2;
@@ -72,7 +72,9 @@ export const AnimatedTooltip = ({
                 <div className="font-bold text-secondary-dark relative z-30 text-base">
                   {item.name}
                 </div>
-                <div className="text-secondary-dark text-xs">{item.designation}</div>
+                <div className="text-secondary-dark text-xs">
+                  {item.designation}
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -82,7 +84,7 @@ export const AnimatedTooltip = ({
             width={150}
             src={item.image}
             alt={item.name}
-            className="object-cover !m-0 !p-0 object-top rounded-full h-20 w-20 border-2 group-hover:scale-105 group-hover:z-30 border-white relative transition duration-500"
+            className="object-cover !m-0 !p-0 object-top rounded-full h-20 w-20 border-2 group-hover:scale-[1.9] group-hover:z-30 border-white relative transition duration-500"
           />
         </div>
       ))}

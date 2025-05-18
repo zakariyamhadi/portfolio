@@ -5,62 +5,72 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "./navbar-menu";
 import { useState } from "react";
 import { ModeToggle } from "./toggle";
 import { AnimatedTooltipPreview } from "../photo-profile";
+import { usePathname, useRouter } from "next/navigation";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 ",
-        className
+        "fixed top-10 inset-x-0 max-w-[80svw] w-fit mx-auto z-50 select-none",
+        className,
       )}
     >
       <Menu setActive={setActive}>
         <AnimatedTooltipPreview />
-
-        <MenuItem setActive={setActive} active={active} item="A propos de moi">
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="A propos de moi"
+          onClick={() => router.push("/biographie")}
+          selected={pathname.includes("biographie")}
+        >
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/biographie">Ma Biographie</HoveredLink>
-            <HoveredLink href="/pourquoi">Pourquoi Ingénieurie de formation ?</HoveredLink>
+            <HoveredLink href="/biographie">
+              Pourquoi Ingénieurie de formation ?
+            </HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-            <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
-            />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Compétences"
+          onClick={() => router.push("/competences")}
+          selected={pathname.includes("competences")}
+        >
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="/competences">
+              Analyser une demande et identifier un besoin en formation
+            </HoveredLink>
+            <HoveredLink href="/competences">
+              Animer une séquence de formation
+            </HoveredLink>
+            <HoveredLink href="/competences">
+              Élaborer une ingénierie pédagogique
+            </HoveredLink>
+            <HoveredLink href="/competences">
+              Conception e-learning et digital learning
+            </HoveredLink>
+            <HoveredLink href="/competences">Montage vidéo</HoveredLink>
           </div>
         </MenuItem>
-        <ModeToggle />
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Mes passions"
+          onClick={() => router.push("/passions")}
+          selected={pathname.includes("passions")}
+        ></MenuItem>
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Expériences & Formations"
+          onClick={() => router.push("/experiences-formations")}
+          selected={pathname.includes("experiences-formations")}
+        ></MenuItem>
       </Menu>
     </div>
   );
