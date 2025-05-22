@@ -1,7 +1,6 @@
 "use client";
 
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import { FolderOpen, FileText } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,12 +8,9 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "@/components/ui/animated-modal";
-import Image from "next/image";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { PinContainer } from "@/components/ui/3d-pin";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 export default function CompetencesPage() {

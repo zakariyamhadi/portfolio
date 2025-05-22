@@ -3,7 +3,6 @@
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Image from "next/image";
 import { LinkPreview } from "@/components/ui/link-preview";
-import ColourfulText from "@/components/ui/colourful-text";
 import React from "react";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 

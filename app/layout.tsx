@@ -57,7 +57,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar className="top-2" />
-          <AuroraBackground />
           {children}
         </ThemeProvider>
       </body>
