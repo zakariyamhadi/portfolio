@@ -14,7 +14,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-[80svw] w-fit mx-auto z-50 select-none",
+        "fixed top-10 inset-x-0 max-w-[100svw] w-fit mx-auto z-50 select-none",
         className,
       )}
     >
@@ -28,8 +28,10 @@ function Navbar({ className }: { className?: string }) {
           selected={pathname.includes("biographie")}
         >
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/biographie">Ma Biographie</HoveredLink>
-            <HoveredLink href="/biographie">
+            <HoveredLink href="/biographie#biographie">
+              Ma Biographie
+            </HoveredLink>
+            <HoveredLink href="/biographie#pourquoi">
               Pourquoi Ingénieurie de formation ?
             </HoveredLink>
           </div>
@@ -42,19 +44,21 @@ function Navbar({ className }: { className?: string }) {
           selected={pathname.includes("competences")}
         >
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/competences">
+            <HoveredLink href="/competences#analyser">
               Analyser une demande et identifier un besoin en formation
             </HoveredLink>
-            <HoveredLink href="/competences">
+            <HoveredLink href="/competences#animer">
               Animer une séquence de formation
             </HoveredLink>
-            <HoveredLink href="/competences">
+            <HoveredLink href="/competences#elaborer">
               Élaborer une ingénierie pédagogique
             </HoveredLink>
-            <HoveredLink href="/competences">
+            <HoveredLink href="/competences#concevoir">
               Conception e-learning et digital learning
             </HoveredLink>
-            <HoveredLink href="/competences">Montage vidéo</HoveredLink>
+            <HoveredLink href="/competences#autres">
+              Autres réalisations
+            </HoveredLink>
           </div>
         </MenuItem>
         <MenuItem
@@ -70,8 +74,15 @@ function Navbar({ className }: { className?: string }) {
           item="Expériences & Formations"
           onClick={() => router.push("/experiences-formations")}
           selected={pathname.includes("experiences-formations")}
+        ></MenuItem>{" "}
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Analyse de situation"
+          onClick={() => router.push("/analyse-situation")}
+          selected={pathname.includes("analyse-situation")}
         ></MenuItem>
-      </Menu>
+      </Menu>{" "}
     </div>
   );
 }

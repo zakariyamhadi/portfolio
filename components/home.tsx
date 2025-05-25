@@ -1,22 +1,22 @@
 "use client";
 
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { IconBrandLinkedin, IconHome, IconMail } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconMail, IconPhone } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import React from "react";
 import { FloatingDock } from "./ui/floating-dock";
 import ColourfulText from "@/components/ui/colourful-text";
 import { Button } from "@/components/ui/moving-border";
 import Image from "next/image";
+import Link from "next/link";
 
 export function BackgroundAndDock() {
   const links = [
     {
-      title: "Home",
+      title: "Téléphone",
       icon: (
-        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "tel:+33782343030",
     },
 
     {
@@ -24,14 +24,14 @@ export function BackgroundAndDock() {
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://www.linkedin.com/in/zakariya-mhadi-34794019a/",
+      href: "https://www.linkedin.com/in/sara-amani-2905771b8/",
     },
     {
       title: "Gmail",
       icon: (
         <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "mailto:amanisara23@gmail.com",
     },
   ];
   return (
@@ -54,12 +54,14 @@ export function BackgroundAndDock() {
           Si tu veux savoir comment je transforme chaque formation en expérience
           captivante, découvre mon portfolio !
         </div>
-        <Button
-          borderRadius="1.75rem"
-          className="bg-white/95 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 text-base"
-        >
-          Me contacter
-        </Button>
+        <Link href="mailto:amanisara23@gmail.com">
+          <Button
+            borderRadius="1.75rem"
+            className="bg-white/95 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 text-base"
+          >
+            Me contacter
+          </Button>
+        </Link>
       </motion.div>
       <Image
         alt="logo-antibia"

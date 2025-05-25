@@ -6,7 +6,7 @@ const people = [
   {
     id: 1,
     name: "Sara MHADI",
-    designation: "Ingénieurie Formation",
+    designation: "Chargée d'ingénierie de formation",
     image: "/assets/pp.jpg",
   },
 ];

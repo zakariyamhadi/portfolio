@@ -70,6 +70,7 @@ const FloatingDockMobile = ({
                 <Link
                   href={item.href}
                   key={item.title}
+                  target={"_blank"}
                   className="h-10 w-10 rounded-full bg-gray-50/50 dark:bg-slate-950/50 flex items-center justify-center"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
@@ -103,7 +104,7 @@ const FloatingDockDesktop = ({
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50/50 dark:bg-slate-900/50 px-4 pb-3",
-        className
+        className,
       )}
     >
       {items.map((item) => (
@@ -138,12 +139,12 @@ function IconContainer({
   const widthTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
-    [20, 40, 20]
+    [20, 40, 20],
   );
   const heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
-    [20, 40, 20]
+    [20, 40, 20],
   );
 
   const width = useSpring(widthTransform, {

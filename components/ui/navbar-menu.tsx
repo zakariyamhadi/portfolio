@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const transition = {
   type: "spring",
@@ -120,9 +120,11 @@ export const ProductItem = ({
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const HoveredLink = ({ children, ...rest }: any) => {
+  const router = useRouter();
   return (
     <Link
       {...rest}
+      onClick={() => router.push(rest.href)}
       className="text-slate-700 dark:text-slate-200 hover:text-black "
     >
       {children}

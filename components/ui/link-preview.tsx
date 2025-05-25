@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 type LinkPreviewProps = {
   children: React.ReactNode;
-  url: string;
+  url?: string;
   className?: string;
   width?: number;
   height?: number;
@@ -91,10 +91,7 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn(
-            "text-white p-1 rounded-md px-1.5 mx-0.5 !bg-primary-dark",
-            className,
-          )}
+          className={cn("font-bold p-1 rounded-md !px-0 mx-0.5", className)}
           href={url}
         >
           {children}
